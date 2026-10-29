@@ -1521,9 +1521,18 @@ the metals table are as follows: >
     args = { "foo", "bar" },
     jvmOptions = { "-Dpropert=123" },
     env = { "RETRY" = "TRUE" },
-    envFile = ".env"
+    envFile = ".env",
+    mainClass = "com.example.Main",
+    buildTarget = "my-target",
+    cwd = "/path/to/working/directory"
   }
 <
+
+The `cwd` key (also accepted as a top-level configuration key) sets the
+working directory the debuggee is started in. Relative paths are resolved
+against the workspace root. `mainClass` and `buildTarget` allow starting a
+debug session for a specific main class in a specific build target instead
+of relying on code lenses.
 
 The final option is to attach to a remote debugger, here the expected
 configuration should match the vscode configuration, requiring a

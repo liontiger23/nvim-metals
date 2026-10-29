@@ -121,6 +121,8 @@ local function setup_dap(execute_command)
         jvmOptions = jvmOptions,
         env = env,
         envFile = envFile,
+        cwd = config.cwd or metals_dap_settings.cwd,
+        buildTarget = metals_dap_settings.buildTarget,
       }
       if metals_dap_settings.mainClass then
         arguments.mainClass = metals_dap_settings.mainClass
